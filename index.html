@@ -3,51 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя визитка</title>
+    <title>Мое портфолио</title>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Подключение CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="content">
-        <h1>Привет! Меня зовут Кирилл 👋</h1>
+<nav>
+    <h2>MyPortfolio</h2>
 
-        <p>
-            Я изучаю программирование в школе программирования и постоянно
-            совершенствую свои навыки в разработке современных сайтов.
-        </p>
+    <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#about">Обо мне</a></li>
+        <li><a href="#skills">Навыки</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+    </ul>
+</nav>
 
-        <p>
-            Уже умею работать с HTML и CSS, изучаю JavaScript и создаю
-            красивые, удобные и адаптивные веб-страницы.
-        </p>
+<header id="home">
+    <div class="hero">
+        <h1>Привет, я Иван 👋</h1>
+        <p>Начинающий веб-разработчик</p>
 
-        <p>
-            В будущем хочу стать профессиональным веб-разработчиком,
-            создавать полезные проекты и постоянно осваивать новые технологии.
-        </p>
-
-        <a href="#about" class="btn">Узнать больше</a>
+        <a href="#about" class="btn">Подробнее</a>
     </div>
 </header>
 
 <section id="about">
-    <div class="container">
-        <h2>Обо мне</h2>
-        <p>
-            Мне нравится программирование, потому что оно позволяет воплощать идеи в жизнь.
-            Я люблю изучать новые технологии, выполнять интересные проекты и развиваться
-            в сфере веб-разработки.
-        </p>
+    <h2>Обо мне</h2>
+
+    <p>
+        Я изучаю программирование и постоянно развиваюсь.
+        Мне нравится создавать красивые сайты и изучать новые технологии.
+    </p>
+
+    <p>
+        Сейчас активно осваиваю HTML, CSS и JavaScript.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Мои навыки</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>HTML</h3>
+            <p>Создание структуры сайтов.</p>
+        </div>
+
+        <div class="card">
+            <h3>CSS</h3>
+            <p>Красивый современный дизайн.</p>
+        </div>
+
+        <div class="card">
+            <h3>JavaScript</h3>
+            <p>Изучаю интерактивность сайтов.</p>
+        </div>
     </div>
 </section>
+
+<section id="projects">
+    <h2>Проекты</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>Сайт-визитка</h3>
+            <p>Мой первый современный сайт.</p>
+        </div>
+
+        <div class="card">
+            <h3>Калькулятор</h3>
+            <p>Приложение на JavaScript.</p>
+        </div>
+
+        <div class="card">
+            <h3>Лендинг</h3>
+            <p>Одностраничный сайт.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contacts">
+    <h2>Контакты</h2>
+
+    <p>📧 example@mail.com</p>
+    <p>📱 +7 (999) 123-45-67</p>
+    <p>💬 Telegram: @username</p>
+</section>
+
+<footer>
+    © 2026 Иван. Все права защищены.
+</footer>
+
+<script>
+let lastScroll = 0;
+const navbar = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll < 100) {
+        navbar.classList.remove("hide");
+        lastScroll = currentScroll;
+        return;
+    }
+
+    if (currentScroll > lastScroll) {
+        navbar.classList.add("hide");
+    } else {
+        navbar.classList.remove("hide");
+    }
+
+    lastScroll = currentScroll;
+});
+</script>
 
 </body>
 </html>
